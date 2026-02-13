@@ -1,0 +1,53 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "ManageIAMUsers",
+            "Effect": "Allow",
+            "Action": [
+                "iam:CreateUser",
+                "iam:GetUser",
+                "iam:ListUsers",
+                "iam:DeleteUser",
+                "iam:TagUser",
+                "iam:UntagUser"
+            ],
+            "Resource": "arn:aws:iam::*:user/*"
+        },
+        {
+            "Sid": "ManageAccessKeys",
+            "Effect": "Allow",
+            "Action": [
+                "iam:CreateAccessKey",
+                "iam:DeleteAccessKey",
+                "iam:ListAccessKeys",
+                "iam:UpdateAccessKey"
+            ],
+            "Resource": "arn:aws:iam::*:user/*"
+        },
+        {
+            "Sid": "AttachPolicies",
+            "Effect": "Allow",
+            "Action": [
+                "iam:AttachUserPolicy",
+                "iam:DetachUserPolicy",
+                "iam:ListAttachedUserPolicies"
+            ],
+            "Resource": "arn:aws:iam::*:user/*",
+            "Condition": {
+                "ArnEquals": {
+                    "iam:PolicyARN": "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+                }
+            }
+        },
+        {
+            "Sid": "ListPolicies",
+            "Effect": "Allow",
+            "Action": [
+                "iam:ListPolicies",
+                "iam:GetPolicy"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

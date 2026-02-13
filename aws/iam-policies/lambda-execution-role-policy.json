@@ -1,0 +1,33 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "CloudWatchLogs",
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "arn:aws:logs:*:*:*"
+        },
+        {
+            "Sid": "IAMUserManagement",
+            "Effect": "Allow",
+            "Action": [
+                "iam:CreateUser",
+                "iam:GetUser",
+                "iam:ListUsers",
+                "iam:DeleteUser",
+                "iam:TagUser",
+                "iam:CreateAccessKey",
+                "iam:DeleteAccessKey",
+                "iam:ListAccessKeys",
+                "iam:AttachUserPolicy",
+                "iam:DetachUserPolicy",
+                "iam:ListAttachedUserPolicies"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
