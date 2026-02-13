@@ -4,6 +4,8 @@ A proof-of-concept integration that enables ServiceNow to manage AWS IAM users t
 
 ## 🏗️ Architecture Overview
 
+![Architecture Diagram](images/architecture-small.jpeg)
+
 ```
 ServiceNow AI Agent → API Gateway → Lambda Function → AWS IAM Service
 ```
